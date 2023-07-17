@@ -8,12 +8,7 @@ It lacks security, performance and robustness for productive use.
 
 ## Development
 
-- written for node18, other versions probably compatible, too
-- `npm install` to install dependencies
-- `npm run test` to run tests
-- `npm run build` to transpile code to `dist` directory
-- `npm run start` to start express server (currently no watch mode)
-- `npm run build_start` as a shortcut for `npm run build` and `npm run start`
+- see [CONTRIBUTING.md](/CONTRIBUTING.md)
 
 ## Usage
 
