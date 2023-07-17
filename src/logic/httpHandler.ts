@@ -18,6 +18,7 @@ export class HttpHandler {
     const content: JsonNode = request.body
 
     console.log(content)
+    console.log(storagePath)
 
     const result = writeToStorage(storagePath, content)
 
