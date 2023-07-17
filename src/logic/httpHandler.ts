@@ -17,8 +17,6 @@ export class HttpHandler {
     const storagePath = splitPath(request.path)
     const content: JsonNode = request.body
 
-    console.log(content)
-
     const result = writeToStorage(storagePath, content)
 
     this.notifySubscribers(storagePath)
