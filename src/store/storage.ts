@@ -1,7 +1,7 @@
 import { JsonNode, JsonObject } from '../types';
 
 
-const storage: JsonObject = {}
+let storage: JsonObject = {}
 
 /**
  * Gets a path by dot notation. E.g. on a storage '{"foo": {"bar": 0}}', this would be the returns:
@@ -19,8 +19,23 @@ export const getFromStorage = (storagePath: Array<string>): JsonNode => {
   )
 }
 
-export const writeToStorage = (path: Array<string>, content: JsonNode, storageItem: JsonObject = storage ): JsonNode => {
-    if (path.length === 1) {
+const isObject = (value: any) => Object.prototype.toString.call(value) === '[object Object]';
+
+export const writeToStorage = (path: Array<string>, content: JsonNode): JsonNode => {
+  if (path.length > 0) {
+    return writeToSubpath(path, content, storage)
+  }
+
+  if (!isObject(content)) {
+    throw new Error("Can only save objects as root")
+  }
+
+  storage = content as JsonObject
+  return storage
+}
+
+const writeToSubpath = (path: Array<string>, content: JsonNode, storageItem: JsonObject = storage ): JsonNode => {
+  if (path.length === 1) {
       storageItem[path[0]] = content;
       return storageItem[path[0]]
     } else {
@@ -28,6 +43,6 @@ export const writeToStorage = (path: Array<string>, content: JsonNode, storageIt
         storageItem[path[0]] = {};
       }
 
-      return writeToStorage(path.slice(1), content, (storageItem[path[0]] as JsonObject));
+      return writeToSubpath(path.slice(1), content, (storageItem[path[0]] as JsonObject));
     }
 }
