@@ -117,8 +117,8 @@ Documentation is currently only in the Readme. Feel free to reach out, if you wa
 - Give a brief summary of what your fix does
 - Explain any not self-explaining parts about your 
 
-## Join The Project Team
-Simply contact me [via email](mailto:felix.nordhusen@senacor.com)
+## Maintainers
+The principal maintainer of this project is [Felix Nordhusen](https://github.com/fnordhusen)
 
 ## Attribution
 This guide is based on the **contributing-gen**. [Make your own](https://github.com/bttger/contributing-gen)!
