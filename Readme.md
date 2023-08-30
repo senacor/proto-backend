@@ -6,9 +6,17 @@ frontends.
 **DISCLAIMER:** This Backend is made for prototyping only and is **NOT** intended for production purposes. 
 It lacks security, performance and robustness for productive use.
 
-## Development
+## Contributing
 
 - see [CONTRIBUTING.md](/CONTRIBUTING.md)
+
+## Installation & Startup
+
+- Have Node 14 or higher installed on your machine
+- `npm install`
+- Make sure ports 8998 and 8999 are free and available on your machine.
+- `npm run build_start`
+  - alternatively, use `npm run build` and  `npm run start`  as separate calls.
 
 ## Usage
 
